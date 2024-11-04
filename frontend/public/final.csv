@@ -1,4 +1,4 @@
-,title,description,is_video_or_blog_or_course,programming_languages,framework_used,tags,url
+index,title,description,is_video_or_blog_or_course,programming_languages,framework_used,tags,url
 1,Class Central Report on Free Certificates,Report on free certificates offered by various online learning platforms,Blog,,,"online learning, free certificates, MOOCs, education technology",https://www.classcentral.com/report/free-certificates/
 3,Categorical Encoding,A tutorial on categorical encoding,Blog,Python,Pandas,"categorical encoding, data preprocessing, data science, machine learning, python, pandas",https://pbpython.com/categorical-encoding.html
 4,Java OOP Concept,Java OOP Concept Cheat Sheet,Blog,Java,,"Java, OOP, Object Oriented Programming, Cheat Sheet, Programming, Development",https://cheatography.com/son9912/cheat-sheets/java-oop-concept/
