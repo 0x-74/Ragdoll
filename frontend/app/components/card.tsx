@@ -2,11 +2,15 @@ import React from 'react';
 import { Card } from 'antd';
 import { BookOpenIcon, PlayCircleIcon, QuestionMarkCircleIcon, TvIcon } from '@heroicons/react/16/solid';
 
-interface DataCardProps {
+export interface DataCardProps {
   title: string;
   description: string;
   is_video_or_blog_or_course: string;
   url: string;
+  index: number;
+  programming_languages?: string;
+  framework_used?: string;
+  tags?: string;
 }
 
 const categorizeContent = (contentType: string) => {
@@ -35,7 +39,7 @@ const logo = (contentType: string) => {
   }
 };
 
-const DataCard: React.FC<DataCardProps> = ({
+export const DataCard: React.FC<DataCardProps> = ({
   title,
   description,
   is_video_or_blog_or_course,

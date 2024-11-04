@@ -1,10 +1,9 @@
 'use client';
 import { useEffect, useState } from 'react';
 import Papa from 'papaparse';
-import DataCard from './components/card';
-
+import { DataCard, DataCardProps } from './components/card';
 const Home: React.FC = () => {
-  const [data, setData] = useState<any[]>([]);
+  const [data, setData] = useState<DataCardProps[]>([]); 
 
   useEffect(() => {
     const fetchCSV = async () => {
@@ -15,12 +14,12 @@ const Home: React.FC = () => {
         }
         const text = await response.text();
 
-        Papa.parse(text, {
+        Papa.parse<DataCardProps>(text, {
           header: true,
-          complete: (results: any) => {
-            setData(results.data); // Set the parsed data
+          complete: (results) => {
+            setData(results.data); 
           },
-          error: (error: any) => {
+          error: (error: Error) => {
             console.error("Error parsing CSV:", error);
           },
         });
@@ -38,14 +37,14 @@ const Home: React.FC = () => {
       <div className="flex flex-wrap justify-around">
         {data.map((item, index) => (
           <DataCard
-            key={index} 
+            key={index}
             title={item.title}
             description={item.description}
             is_video_or_blog_or_course={item.is_video_or_blog_or_course}
             programming_languages={item.programming_languages}
             framework_used={item.framework_used}
             tags={item.tags}
-            url={item.url}         />
+            url={item.url} index={0}          />
         ))}
       </div>
     </div>
